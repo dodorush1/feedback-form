@@ -1,0 +1,167 @@
+/* --- Каркас формы --- */
+.feedback-form {
+  max-width: 480px;
+  margin: 24px auto 0;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* --- Поле --- */
+.field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.field__required {
+  color: #e5484d;
+  margin-left: 2px;
+}
+
+/* --- Базовое состояние (покой) --- */
+.field__input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 2px solid #d0d5dd;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #1d2939;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+/* --- Фокус --- */
+.field__input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* --- Ошибка --- */
+.field__input--error {
+  border-color: #e5484d;
+  background: #fef2f2;
+}
+.field__input--error:focus {
+  border-color: #e5484d;
+  box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.15);
+}
+
+/* --- Успех --- */
+.field__input--valid {
+  border-color: #30a46c;
+  background: #f0fdf4;
+}
+.field__input--valid:focus {
+  border-color: #30a46c;
+  box-shadow: 0 0 0 3px rgba(48, 164, 108, 0.15);
+}
+
+/* --- Текст ошибки --- */
+.field__error {
+  font-size: 13px;
+  color: #e5484d;
+  margin-top: 2px;
+}
+
+/* --- Textarea --- */
+.field__input--textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* --- Строка: ошибка + счётчик --- */
+.field__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 18px;
+}
+
+.field__counter {
+  font-size: 12px;
+  color: #667085;
+  margin-left: auto;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.field__counter--limit {
+  color: #e5484d;
+  font-weight: 600;
+}
+
+/* --- Чекбокс --- */
+.field--checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.field__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  user-select: none;
+}
+
+.field__checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* --- Кнопка --- */
+.feedback-form__submit {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.feedback-form__submit:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.feedback-form__submit:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* --- Экран успеха --- */
+.feedback-form--success {
+  text-align: center;
+}
+
+.feedback-form__title {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.feedback-form__text {
+  font-size: 15px;
+  color: #667085;
+  margin-bottom: 24px;
+}
